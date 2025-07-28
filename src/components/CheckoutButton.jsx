@@ -1,5 +1,6 @@
 'use client'
 
+import { createCheckoutSession } from '@/actions/createCheckoutSession'
 import { Button } from '@/components/ui/button'
 import { useState } from 'react'
 
@@ -8,6 +9,8 @@ const CheckoutButton = props => {
 
   const onClick = async () => {
     setIsLoading(true)
+
+    await createCheckoutSession({})
     setIsLoading(false)
   }
 
